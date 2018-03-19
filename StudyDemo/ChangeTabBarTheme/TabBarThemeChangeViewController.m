@@ -31,8 +31,8 @@
     [super viewDidAppear:animated];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         MyTabBar *tabbar = (MyTabBar *)self.tabBar;
-        [tabbar configMidItemWidth:45 URLString:@"https://www.baidu.com" clickedCompletion:^{
-            NSLog(@"--->hhhhh");
+        [tabbar configMidItemWidth:45 imgURLString:@"imgURL" clickedCompletion:^{
+            NSLog(@"--->clicked");
         }];
     });
 }
@@ -67,12 +67,10 @@
         UIImage *normal = [[self at_imageScaleFromImage:normalTemp toSize:CGSizeMake(35, 35)] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         UIImage *selected = [[self at_imageScaleFromImage:selectedTemp toSize:CGSizeMake(35, 35)] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         ChangeThemeViewController *VC = [ChangeThemeViewController new];
-VC.view.backgroundColor = [UIColor colorWithHue:idx * 60 / 360.0 saturation:1 brightness:1 alpha:1];
-        UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:VC];
-        
-        UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:titleArray[idx] image:normal selectedImage:selected];
-        navi.tabBarItem = item;
-        [VCArray addObject:navi];
+    VC.view.backgroundColor = [UIColor colorWithHue:idx * 60 / 360.0 saturation:1 brightness:1 alpha:1];
+    UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:titleArray[idx] image:normal selectedImage:selected];
+    VC.tabBarItem = item;
+    [VCArray addObject:VC];
     }];
     self.viewControllers = VCArray;
     [self setSelectedIndex:0];
