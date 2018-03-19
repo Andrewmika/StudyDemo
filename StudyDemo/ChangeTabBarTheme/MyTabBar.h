@@ -10,5 +10,5 @@
 
 @interface MyTabBar : UITabBar
 
-- (void)configMidItemWidth:(CGFloat)width URLString:(NSString *)url clickedCompletion:(void(^)(void))completion;
+- (void)configMidItemWidth:(CGFloat)width imgURLString:(NSString *)url clickedCompletion:(void(^)(void))completion;
 @end

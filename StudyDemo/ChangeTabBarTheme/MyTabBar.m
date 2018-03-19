@@ -26,7 +26,7 @@
     return self;
 }
 
-- (void)configMidItemWidth:(CGFloat)width URLString:(NSString *)url clickedCompletion:(void (^)(void))completion {
+- (void)configMidItemWidth:(CGFloat)width imgURLString:(NSString *)url clickedCompletion:(void (^)(void))completion {
     _midClickedBlock = completion;
     self.midItemWidth = width;
     self.url = url;
@@ -66,6 +66,9 @@
 }
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    if (self.clipsToBounds || self.hidden || (self.alpha == 0.f)) {
+        return nil;
+    }
     UIView *view = [super hitTest:point withEvent:event];
     if (view) {
         return view;
