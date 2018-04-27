@@ -35,6 +35,7 @@
             NSLog(@"--->clicked");
         }];
     });
+    [self.tabBar becomeFirstResponder];
 }
 
 #pragma mark - Interface Method
@@ -77,7 +78,6 @@
     
 
 }
-
 
 #pragma mark - Event Response
 

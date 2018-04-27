@@ -73,7 +73,7 @@
     if (view) {
         return view;
     }
-    for (UIView *subView in self.subviews) {
+    for (UIView *subView in self.subviews.reverseObjectEnumerator) {
         CGPoint subPoint = [subView convertPoint:point fromView:self];
         view = [subView hitTest:subPoint withEvent:event];
         if (view) {
