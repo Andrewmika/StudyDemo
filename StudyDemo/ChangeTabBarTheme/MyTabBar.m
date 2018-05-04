@@ -82,7 +82,6 @@
     }
     return nil;
 }
-
 - (UIButton *)midItem {
     if (!_midItem) {
         _midItem = [UIButton buttonWithType:UIButtonTypeSystem];

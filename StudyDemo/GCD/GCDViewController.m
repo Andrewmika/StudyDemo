@@ -97,22 +97,28 @@ typedef NS_ENUM(NSUInteger, GCDActionTag) {
 }
 
 - (void)p_async {
-    NSLog(@"--->async-1");
+    NSLog(@"--->async-1-thread:%@",[NSThread currentThread]);
     dispatch_async(self.sQ, ^{
         sleep(1);
-        NSLog(@"--->async-2");
+        NSLog(@"--->async-2-thread:%@",[NSThread currentThread]);
     });
     dispatch_async(self.sQ, ^{
-        NSLog(@"--->async-3");
+        NSLog(@"--->async-3-thread:%@",[NSThread currentThread]);
     });
     dispatch_async(self.cQ, ^{
         sleep(1);
-        NSLog(@"--->async-4");
+        NSLog(@"--->async-4-thread:%@",[NSThread currentThread]);
     });
     dispatch_async(self.cQ, ^{
-        NSLog(@"--->async-5");
+        NSLog(@"--->async-5-thread:%@",[NSThread currentThread]);
     });
-    NSLog(@"--->async-6");
+    dispatch_async(self.sQ, ^{
+        NSLog(@"--->async-6-1-thread:%@",[NSThread currentThread]);
+        dispatch_async(self.sQ, ^{
+            NSLog(@"--->async-6-2-thread:%@",[NSThread currentThread]);
+        });
+    });
+    NSLog(@"--->async-7-thread:%@",[NSThread currentThread]);
 }
 
 - (void)p_after {

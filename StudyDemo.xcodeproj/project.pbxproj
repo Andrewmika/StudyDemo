@@ -11,7 +11,9 @@
 		6417C1C42074AEA600FEDED0 /* ResponderChainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6417C1C32074AEA600FEDED0 /* ResponderChainViewController.m */; };
 		642345742056222F00FF96E8 /* MyTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 642345732056222F00FF96E8 /* MyTabBar.m */; };
 		642566252044F20C00D34F14 /* RACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 642566242044F20C00D34F14 /* RACViewController.m */; };
+		64614D9420945FA100E50EC9 /* NSOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64614D9320945FA100E50EC9 /* NSOperationViewController.m */; };
 		646177B62091D3C1008F405A /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 646177B52091D3C1008F405A /* GCDViewController.m */; };
+		648390FB209AB1B0005C864C /* CustomOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 648390FA209AB1B0005C864C /* CustomOperation.m */; };
 		64E315BE2043EB9E00F902B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64E315BD2043EB9E00F902B1 /* AppDelegate.m */; };
 		64E315C42043EB9E00F902B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64E315C22043EB9E00F902B1 /* Main.storyboard */; };
 		64E315C62043EB9E00F902B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64E315C52043EB9E00F902B1 /* Assets.xcassets */; };
@@ -30,8 +32,12 @@
 		642345732056222F00FF96E8 /* MyTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTabBar.m; sourceTree = "<group>"; };
 		642566232044F20C00D34F14 /* RACViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACViewController.h; sourceTree = "<group>"; };
 		642566242044F20C00D34F14 /* RACViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACViewController.m; sourceTree = "<group>"; };
+		64614D9220945FA100E50EC9 /* NSOperationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSOperationViewController.h; sourceTree = "<group>"; };
+		64614D9320945FA100E50EC9 /* NSOperationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSOperationViewController.m; sourceTree = "<group>"; };
 		646177B42091D3C1008F405A /* GCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDViewController.h; sourceTree = "<group>"; };
 		646177B52091D3C1008F405A /* GCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDViewController.m; sourceTree = "<group>"; };
+		648390F9209AB1B0005C864C /* CustomOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomOperation.h; sourceTree = "<group>"; };
+		648390FA209AB1B0005C864C /* CustomOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomOperation.m; sourceTree = "<group>"; };
 		64E315B92043EB9E00F902B1 /* StudyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64E315BC2043EB9E00F902B1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		64E315BD2043EB9E00F902B1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -92,13 +98,24 @@
 			path = RACDemo;
 			sourceTree = "<group>";
 		};
-		646177B32091D3AB008F405A /* New Group */ = {
+		64614D9120945F6F00E50EC9 /* NSOperation */ = {
+			isa = PBXGroup;
+			children = (
+				64614D9220945FA100E50EC9 /* NSOperationViewController.h */,
+				64614D9320945FA100E50EC9 /* NSOperationViewController.m */,
+				648390F9209AB1B0005C864C /* CustomOperation.h */,
+				648390FA209AB1B0005C864C /* CustomOperation.m */,
+			);
+			path = NSOperation;
+			sourceTree = "<group>";
+		};
+		646177B32091D3AB008F405A /* GCD */ = {
 			isa = PBXGroup;
 			children = (
 				646177B42091D3C1008F405A /* GCDViewController.h */,
 				646177B52091D3C1008F405A /* GCDViewController.m */,
 			);
-			path = "New Group";
+			path = GCD;
 			sourceTree = "<group>";
 		};
 		64E315B02043EB9E00F902B1 = {
@@ -122,7 +139,8 @@
 		64E315BB2043EB9E00F902B1 /* StudyDemo */ = {
 			isa = PBXGroup;
 			children = (
-				646177B32091D3AB008F405A /* New Group */,
+				64614D9120945F6F00E50EC9 /* NSOperation */,
+				646177B32091D3AB008F405A /* GCD */,
 				6417C1C12074AE5700FEDED0 /* ResponderChain */,
 				64EA535F205131B300108C42 /* ChangeTabBarTheme */,
 				642566222044F1F800D34F14 /* RACDemo */,
@@ -293,12 +311,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				64E315D42043EBE300F902B1 /* IndexTableViewController.m in Sources */,
+				64614D9420945FA100E50EC9 /* NSOperationViewController.m in Sources */,
 				64E315D82043EE3800F902B1 /* RuntimeViewController.m in Sources */,
 				642566252044F20C00D34F14 /* RACViewController.m in Sources */,
 				646177B62091D3C1008F405A /* GCDViewController.m in Sources */,
 				6417C1C42074AEA600FEDED0 /* ResponderChainViewController.m in Sources */,
 				64E315CC2043EB9E00F902B1 /* main.m in Sources */,
 				64EA53622051325C00108C42 /* TabBarThemeChangeViewController.m in Sources */,
+				648390FB209AB1B0005C864C /* CustomOperation.m in Sources */,
 				64EA53652051328D00108C42 /* ChangeThemeViewController.m in Sources */,
 				64E315BE2043EB9E00F902B1 /* AppDelegate.m in Sources */,
 				642345742056222F00FF96E8 /* MyTabBar.m in Sources */,

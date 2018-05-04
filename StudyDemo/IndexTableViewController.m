@@ -77,7 +77,7 @@
 
 - (NSArray<NSString *> *)dataSource {
     if (!_dataSource) {
-        _dataSource = @[@"RAC",@"Runtime",@"TabBarThemeChange",@"ResponderChain",@"GCD"];
+        _dataSource = @[@"RAC",@"Runtime",@"TabBarThemeChange",@"ResponderChain",@"GCD",@"NSOperation"];
     }
     return _dataSource;
 }
